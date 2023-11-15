@@ -46,15 +46,14 @@ int main()
     cout << "Angel has to pay BGN " << overallPizzaPriceForAngel << endl;
     cout << "Borislava has to pay BGN " << overallPizzaPriceForBorislava << endl;
 
-
     //По колко следва да платят за седмицата на база какви са им заплатите, ако Ангел изяжда 1/3 от пицата на Борислава:
     double salaryAngel = 1800;
     double salaryBorislava = 4000;
     // double salaryPercentDiff = salaryAngel / salaryBorislava * 100;
     double paidByAngel = overallPizzaPriceForAngel * (salaryAngel / salaryBorislava);
     double paidByBorislava = overallPizzaPriceForTwo - paidByAngel;
-    cout << "Paid by Angel according to salaries:: " << paidByAngel << endl;
-    cout << "Paid by Borislava according to salaries:: " << paidByBorislava << endl;
+    cout << "Paid by Angel according to salaries: " << paidByAngel << endl;
+    cout << "Paid by Borislava according to salaries: " << paidByBorislava << endl;
 
     return 0;
 }
