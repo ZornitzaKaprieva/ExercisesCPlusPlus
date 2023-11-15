@@ -12,46 +12,28 @@ using namespace std;
 
 int main()
 {
-
-    double pizzaPrice = 7;
+    
     int days = 7;
+    double pizzaPrice = 7;
     double pizzaPriceDiscount = 7 - (7 * 0.2);
-    double overallPizzaPrice = 0;
-    int pizzaCount = 0;
+    double overallPizzaPrice = 7 * (pizzaPrice + pizzaPriceDiscount);
 
-    // Калкулиране на цената на пиците за седмицата (за един човек):
-    for (int i = 1; i <= days; i++)
-    {
-
-        if (i % 2 == 0)
-        {
-            overallPizzaPrice += pizzaPriceDiscount;
-        }
-        else
-        {
-            overallPizzaPrice += pizzaPrice;
-        }
-
-        pizzaCount++;
-    }
-
-    // Колко са платили общо в края на седмицата:
-    double overallPizzaPriceForTwo = overallPizzaPrice * 2;
-    cout << "At the end of the week, Borislava and Angel paid a total of BGN " << overallPizzaPriceForTwo << endl;
+    cout << "overallPizzaPrice: " << overallPizzaPrice << endl;
 
     // По колко следва да платят за седмицата, ако Ангел изяжда 1/3 от пицата на Борислава:
-    double oneThirdOverallPizzaPrice = overallPizzaPrice / 3;
-    double overallPizzaPriceForAngel = (overallPizzaPrice + oneThirdOverallPizzaPrice);
-    double overallPizzaPriceForBorislava = overallPizzaPrice - oneThirdOverallPizzaPrice;
+    double halfPrice = overallPizzaPrice / 2;
+    double oneThirdOverallPizzaPrice = halfPrice / 3;
+    double overallPizzaPriceForAngel = halfPrice + oneThirdOverallPizzaPrice;
+    double overallPizzaPriceForBorislava = halfPrice-oneThirdOverallPizzaPrice;
     cout << "Angel has to pay BGN " << overallPizzaPriceForAngel << endl;
     cout << "Borislava has to pay BGN " << overallPizzaPriceForBorislava << endl;
 
-    //По колко следва да платят за седмицата на база какви са им заплатите, ако Ангел изяжда 1/3 от пицата на Борислава:
+    // По колко следва да платят за седмицата на база какви са им заплатите, ако Ангел изяжда 1/3 от пицата на Борислава:
     double salaryAngel = 1800;
     double salaryBorislava = 4000;
     // double salaryPercentDiff = salaryAngel / salaryBorislava * 100;
     double paidByAngel = overallPizzaPriceForAngel * (salaryAngel / salaryBorislava);
-    double paidByBorislava = overallPizzaPriceForTwo - paidByAngel;
+    double paidByBorislava = overallPizzaPrice - paidByAngel;
     cout << "Paid by Angel according to salaries: " << paidByAngel << endl;
     cout << "Paid by Borislava according to salaries: " << paidByBorislava << endl;
 
