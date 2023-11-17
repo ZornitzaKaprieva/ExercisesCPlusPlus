@@ -13,27 +13,27 @@ using namespace std;
 int main()
 {
     
-    int days = 7;
+    int days = 5; // работна седмицата
     double pizzaPrice = 7;
     double pizzaPriceDiscount = 7 - (7 * 0.2);
-    double overallPizzaPrice = 7 * (pizzaPrice + pizzaPriceDiscount);
+    double totalPizzaPrice = days * (pizzaPrice + pizzaPriceDiscount);
 
-    cout << "overallPizzaPrice: " << overallPizzaPrice << endl;
+    cout << "The total cost of the pizza is " << totalPizzaPrice << endl;
 
     // По колко следва да платят за седмицата, ако Ангел изяжда 1/3 от пицата на Борислава:
-    double halfPrice = overallPizzaPrice / 2;
+    double halfPrice = totalPizzaPrice / 2;
     double oneThirdOverallPizzaPrice = halfPrice / 3;
-    double overallPizzaPriceForAngel = halfPrice + oneThirdOverallPizzaPrice;
-    double overallPizzaPriceForBorislava = halfPrice-oneThirdOverallPizzaPrice;
-    cout << "Angel has to pay BGN " << overallPizzaPriceForAngel << endl;
-    cout << "Borislava has to pay BGN " << overallPizzaPriceForBorislava << endl;
+    double totalPizzaPriceForAngel = halfPrice + oneThirdOverallPizzaPrice;
+    double totalPizzaPriceForBorislava = halfPrice-oneThirdOverallPizzaPrice;
+    cout << "Angel has to pay BGN " << totalPizzaPriceForAngel << endl;
+    cout << "Borislava has to pay BGN " << totalPizzaPriceForBorislava << endl;
 
     // По колко следва да платят за седмицата на база какви са им заплатите, ако Ангел изяжда 1/3 от пицата на Борислава:
     double salaryAngel = 1800;
     double salaryBorislava = 4000;
     // double salaryPercentDiff = salaryAngel / salaryBorislava * 100;
-    double paidByAngel = overallPizzaPriceForAngel * (salaryAngel / salaryBorislava);
-    double paidByBorislava = overallPizzaPrice - paidByAngel;
+    double paidByAngel = totalPizzaPriceForAngel * (salaryAngel / salaryBorislava);
+    double paidByBorislava = totalPizzaPrice - paidByAngel;
     cout << "Paid by Angel according to salaries: " << paidByAngel << endl;
     cout << "Paid by Borislava according to salaries: " << paidByBorislava << endl;
 
