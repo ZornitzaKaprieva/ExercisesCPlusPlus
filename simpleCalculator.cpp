@@ -27,8 +27,9 @@ int main()
     case '%':
         //  cout << num1 << " " << operation << " " << num2  << " = " << num1 % num2 << endl; //дава грешка: float не може да се дели с %
 
-        // bool isNum1Int = (int)num1 == num1; //не разбирам защо така разписано дава грешка
+        // bool isNum1Int = (int)num1 == num1; //за да работи тази инициализация, следва кодът на case '%': да бъде ограден в {} (case '%'{...})
         // bool isNum2Int = (int)num2 == num2;
+
         bool isNum1Int, isNum2Int;
         isNum1Int = (int)num1 == num1;
         isNum2Int = (int)num2 == num2;
@@ -42,7 +43,7 @@ int main()
             cout << "Not valid" << endl;
         }
         break;
-    default: // дава грешка, когато се директно се инциализират bool променливите:  bool validNum1 = (int)num1 == num1; bool validNum2 = (int)num2 == num2;
+    default:
         cout << "Invalid input" << endl;
         break;
     }
