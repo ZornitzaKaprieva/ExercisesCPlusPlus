@@ -2,20 +2,20 @@
 #include <cmath>
 using namespace std;
 
-int printRedirection();
+void printRedirection();
 
 int factorial(double x);
-int printFactorial(int factorial); // !
-double printSqrt(double x);        // s
-double oneNumOperation(double num1, char operation);
+void printFactorial(int factorial); // !
+void printSqrt(double x);        // s
+void oneNumOperation(double num1, char operation);
 
-double printAddition(double x, double y);       // +
-double printSubtraction(double x, double y);    // -
-double printMultiplication(double x, double y); // *
-double printDivision(double x, double y);       // /
-int printModulo(double x, double y);            // %
-double printPow(double x, double y);            // p
-double twoNumOperation(double num1, char operation, double num2);
+void printAddition(double x, double y);       // +
+void printSubtraction(double x, double y);    // -
+void printMultiplication(double x, double y); // *
+void printDivision(double x, double y);       // /
+void printModulo(double x, double y);            // %
+void printPow(double x, double y);            // p 
+void twoNumOperation(double num1, char operation, double num2);
 
 int main()
 {
@@ -25,7 +25,7 @@ printRedirection(); //todo: Ако се въведе char вместо int, пр
     return 0;
 }
 
-int printRedirection()
+void printRedirection()
 {
 while (true)
     {
@@ -53,17 +53,19 @@ int factorial(double x)
 
     return x * factorial(x - 1);
 }
-int printFactorial(int x)
+
+void printFactorial(int x)
 {
     x = (int)x;
     cout << x << "! = " << factorial(x) << endl;
 }
-double printSqrt(double x)
+
+void printSqrt(double x)
 {
     cout << "The square root of " << x << " = " << sqrt(x) << endl; // √
 }
 
-double oneNumOperation(double num1, char operation)
+void oneNumOperation(double num1, char operation)
 {
     cout << "Enter number and operator: " << endl;
     cin >> num1 >> operation;
@@ -84,23 +86,27 @@ double oneNumOperation(double num1, char operation)
     }
 }
 
-double printAddition(double x, double y)
+void printAddition(double x, double y)
 {
     cout << x << " + " << y << " = " << x + y << endl;
 }
-double printSubtraction(double x, double y)
+
+void printSubtraction(double x, double y)
 {
     cout << x << " - " << y << " = " << x - y << endl;
 }
-double printMultiplication(double x, double y)
+
+void printMultiplication(double x, double y)
 {
     cout << x << " * " << y << " = " << x * y << endl;
 }
-double printDivision(double x, double y)
+
+void printDivision(double x, double y)
 {
     cout << x << " / " << y << " = " << x / y << endl;
 }
-int printModulo(double x, double y)
+
+void printModulo(double x, double y)
 {
     bool isNum1Int, isNum2Int;
     isNum1Int = (int)x == x;
@@ -117,12 +123,13 @@ int printModulo(double x, double y)
         cout << "Not valid" << endl;
     }
 }
-double printPow(double x, double y)
+
+void printPow(double x, double y)
 {
     cout << x << " power " << y << " = " << pow(x, y) << endl;
 }
 
-double twoNumOperation(double num1, char operation, double num2)
+void twoNumOperation(double num1, char operation, double num2)
 {
     cout << "Enter 1st number, operator and 2nd number:" << endl;
     cin >> num1 >> operation >> num2;
